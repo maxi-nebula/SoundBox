@@ -1,0 +1,13 @@
+/** @format */
+
+body {
+  background-color: black;
+  background-image: url("madhudhumathi/repos/SoundBox/backgroundimage");
+}
+
+button {
+  background-color: #4caf50;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
