@@ -7,34 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./soundbox.css" />
-    <script src="./Soundbox.js"></script>
+
     <title>SoundBox</title>
   </head>
   <body>
     <div class="div_main">
-      <audio id="mboom" src="./audiofiles/boom.wav" preload="auto"></audio>
-      <audio id="mclamp" src="./audiofiles/clap.wav" preload="auto"></audio>
-      <audio id="mhithat" src="./audiofiles/hihat.wav" preload="auto"></audio>
-      <audio id="mkick" src="./audiofiles/kick.wav" preload="auto"></audio>
-      <audio
-        id="mopenhat"
-        src="./audiofiles/openhat.wav"
-        preload="auto"
-      ></audio>
-      <audio id="mride" src="./audiofiles/ride.wav" preload="auto"></audio>
-      <audio id="msnare" src="./audiofiles/snare.wav" preload="auto"></audio>
-      <audio id="mtink" src="./audiofiles/tink.wav" preload="auto"></audio>
-      <audio id="" src="./audiofiles/tom.wav" preload="auto"></audio>
-
-      <button onclick="document.getElementById('mboom').play();">A</button>
-      <button onclick="document.getElementById('mclamp').play();">S</button>
-      <button onclick="document.getElementById('mhithat').play();">D</button>
-      <button onclick="document.getElementById('mkick').play();">F</button>
-      <button onclick="document.getElementById('mopenhat').play();">G</button>
-      <button onclick="document.getElementById('mride').play();">H</button>
-      <button onclick="document.getElementById('msnare').play();">J</button>
-      <button onclick="document.getElementById('mtink').play();">K</button>
-      <button onclick="document.getElementById('mboom').play();">L</button>
+      <button id="btnmboom" onkeypress="playAudio();">click</button>
     </div>
+    <script src="./Soundbox.js"></script>
   </body>
 </html>
