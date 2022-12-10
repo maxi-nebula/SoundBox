@@ -2,12 +2,23 @@
 
 body {
   background-color: black;
-  background-image: url("madhudhumathi/repos/SoundBox/backgroundimage");
+  background-image: url("madhumathi/repos/SoundBox/backgroundimage");
 }
 
-button {
-  background-color: #4caf50;
-  width: 100px;
-  height: 100px;
+.button_container {
   cursor: pointer;
+  background-color: black;
+
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.button_container_elements {
+  background-color: orange;
+  box-shadow: 2px 2px aqua;
+  border-radius: 0.5rem;
+  height: 60px;
+  width: 60px;
 }
