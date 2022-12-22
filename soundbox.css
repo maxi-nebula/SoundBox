@@ -1,24 +1,42 @@
 /** @format */
-
 body {
-  background-color: black;
-  background-image: url("madhumathi/repos/SoundBox/backgroundimage");
+  width: 0px;
+  margin: 0px;
 }
-
-.button_container {
+.div_main {
   cursor: pointer;
-  background-color: black;
+  background-image: url(../SoundBox/backgroundimage/concert.jpg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 
-  height: 100vh;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
 
-.button_container_elements {
-  background-color: orange;
+.key_style {
+  background-color: rgb(0, 0, 0, 0.6);
   box-shadow: 2px 2px aqua;
   border-radius: 0.5rem;
-  height: 60px;
-  width: 60px;
+  transition: all 0.07s ease;
+  height: 70px;
+  width: 70px;
+  text-align: center;
+  font-style: italic;
+  font-weight: bolder;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  color: white;
+}
+
+.playing_sound {
+  transform: scale(1.1);
+  border: 7px solid;
+
+  box-shadow: 0 0 10px yellowgreen;
 }

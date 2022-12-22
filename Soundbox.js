@@ -1,82 +1,24 @@
 /** @format */
 
-const notes = [
-  {
-    note: "A",
-    id: "mboom",
-    audioFile: "boom.wav",
-    class: "button_container_elements",
-  },
-  {
-    note: "S",
-    id: "mclap",
-    audioFile: "clap.wav",
-    class: "button_container_elements",
-  },
-  {
-    note: "D",
-    id: "mhihat",
-    audioFile: "hihat.wav",
-    class: "button_container_elements",
-  },
-  {
-    note: "F",
-    id: "mboom",
-    audioFile: "boom.wav",
-    class: "button_container_elements",
-  },
-  {
-    note: "G",
-    id: "mkick",
-    audioFile: "kick.wav",
-    class: "button_container_elements",
-  },
-  {
-    note: "H",
-    id: "mopenhat",
-    audioFile: "openhat.wav",
-    class: "button_container_elements",
-  },
-  {
-    note: "J",
-    id: "mride",
-    audioFile: "ride.wav",
-    class: "button_container_elements",
-  },
-  {
-    note: "K",
-    id: "msnare",
-    audioFile: "snare.wav",
-    class: "button_container_elements",
-  },
-  {
-    note: "L",
-    id: "mtink",
-    audioFile: "tink.wav",
-    class: "button_container_elements",
-  },
-];
+window.addEventListener("keydown", playAudio);
 
-const audioContainer = document.querySelector(".audio");
-console.log(audioContainer);
-const buttonContainer = document.querySelector(".button_container");
-console.log(buttonContainer);
+function playAudio(e) {
+  const audio = document.querySelector(`audio[data-key = "${e.key}"]`);
+  const key = document.querySelector(`div[data-key="${e.key}"]`);
 
-if (audioContainer != undefined && audioContainer != null) {
-  for (const { note, id, audioFile } of notes) {
-    const audioElement = document.createElement("audio");
-    audioElement.id = id;
-    audioElement.preload = "auto";
-    audioElement.src = `./audiofiles/${audioFile}`;
-
-    const buttonElement = document.createElement("button");
-    buttonElement.textContent = note;
-    buttonElement.classList.add("button_container_elements");
-    buttonElement.addEventListener("click", () => {
-      audioElement.play();
-    });
-
-    audioContainer.appendChild(audioElement);
-    buttonContainer.appendChild(buttonElement);
-  }
+  if (!audio) return;
+  audio.currentTime = 0;
+  audio.play();
+  key.classList.add("playing_sound");
 }
+
+function removeStyle(e) {
+  if (e.propertyName !== "transform") return;
+  e.target.classList.remove("playing_sound");
+}
+
+const pressedKeys = Array.from(document.querySelectorAll(".key_style"));
+console.log(pressedKeys);
+pressedKeys.forEach((pKey) =>
+  pKey.addEventListener("transitionend", removeStyle)
+);
